@@ -1,0 +1,1301 @@
+/* ==========================================================================
+   YACHT LUXURY NAVAL ARCHITECTURE — DESIGN SYSTEM & STYLESHEET
+   Clean Minimalist White & Sky Blue Luxury Aesthetic
+   Matches Reference UI Design Pixel-for-Pixel
+   ========================================================================== */
+
+:root {
+  /* --- LUXURY CLEAN WHITE & SKY BLUE COLOR PALETTE --- */
+  --color-bg-base: #ffffff;
+  --color-bg-subtle: #f8fafc;
+  --color-bg-sky: #f0f8ff;
+  --color-bg-sky-light: #e0f2fe;
+
+  /* Sky Blue & Cyan Accents */
+  --color-sky-blue: #0ea5e9;
+  --color-sky-blue-hover: #0284c7;
+  --color-sky-cyan: #38bdf8;
+  --color-sky-tint: #bae6fd;
+  --color-ocean-deep: #0369a1;
+
+  /* Typography & Contrast */
+  --color-text-primary: #0f172a;  /* Deep Luxury Slate Navy */
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-tertiary: #94a3b8;
+
+  /* Borders & Glassmorphism */
+  --color-border-subtle: rgba(14, 165, 233, 0.12);
+  --color-border-light: #e2e8f0;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+
+  /* --- FONTS --- */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* --- RADIUS --- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* --- SHADOWS --- */
+  --shadow-subtle: 0 4px 20px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 12px 36px rgba(15, 23, 42, 0.06);
+  --shadow-sky: 0 16px 40px rgba(14, 165, 233, 0.1);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+  /* --- MOTION --- */
+  --motion-instant: 200ms;
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESET & FOUNDATIONS
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-bg-base);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  font-feature-settings: "tnum" 1;
+}
+
+.highlight {
+  color: var(--color-sky-blue) !important;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--color-text-primary);
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: var(--radius-xs);
+  z-index: 10000;
+  transition: top var(--motion-instant);
+  text-decoration: none;
+}
+.skip-to-content:focus {
+  top: 20px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sky-blue);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   FLOATING GLASS NAVBAR (MATCHING REFERENCE EXACTLY)
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 64px);
+  max-width: 1200px;
+  z-index: 1000;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  top: 14px;
+}
+
+.header-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color var(--motion-instant);
+}
+
+.nav-link:hover {
+  color: var(--color-sky-blue);
+}
+
+/* Solid Black Pill Active State (Reference: The Brand) */
+.nav-link.pill-active {
+  background: var(--color-text-primary);
+  color: #ffffff;
+  padding: 7px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.nav-link.pill-active:hover {
+  color: #ffffff;
+  background: #1e293b;
+}
+
+.brand-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+}
+
+/* ==========================================================================
+   3D SCROLL HERO STAGE (240-FRAME CANVAS SCRUBBING)
+   ========================================================================== */
+
+.hero-stage {
+  position: relative;
+  width: 100vw;
+  height: 380vh; /* Scrollytelling height */
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg-base);
+}
+
+.hero-sticky-frame {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-base);
+}
+
+/* Giant background typography: "Yacht" (as seen in reference) */
+.giant-bg-text {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 0;
+  font-size: clamp(6.5rem, 21vw, 24rem);
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: #111827;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-char {
+  display: inline-block;
+}
+
+/* Fullscreen Canvas for 240-Frame Scrubbing */
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+  z-index: 2;
+}
+
+/* Tagline text top-right (Exact text from reference, clean typography) */
+.hero-tagline-card {
+  position: absolute;
+  top: 96px;
+  right: 56px;
+  max-width: 290px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  z-index: 10;
+  pointer-events: none;
+  text-align: right;
+}
+
+.tagline-text {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+/* Full Left Side Ambient Gradient Shadow (Seamless Left Edge Vignette, No Glass Blobs) */
+.hero-left-scrim {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 52vw;
+  max-width: 740px;
+  pointer-events: none;
+  z-index: 4;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.85) 35%,
+    rgba(255, 255, 255, 0.45) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: background 0.5s var(--ease-smooth);
+}
+
+.hero-left-scrim.blueprint-mode {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.96) 0%,
+    rgba(15, 23, 42, 0.85) 35%,
+    rgba(15, 23, 42, 0.45) 65%,
+    rgba(15, 23, 42, 0) 100%
+  );
+}
+
+/* ==========================================================================
+   MIDDLE-LEFT EDITORIAL HEADINGS & SUBHEADINGS
+   Vertically centered, sitting gracefully in full left ambient shadow
+   ========================================================================== */
+
+.hero-editorial-left {
+  position: absolute;
+  top: 50%;
+  left: 64px;
+  transform: translateY(-50%);
+  width: clamp(340px, 42vw, 540px);
+  max-width: calc(100vw - 100px);
+  min-height: 260px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.act-phase {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateY(16px);
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.45s var(--ease-smooth), transform 0.45s var(--ease-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  pointer-events: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.act-phase.active {
+  opacity: 1;
+  transform: translateY(-50%) translateY(0);
+}
+
+.act-phase-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-sky-blue);
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: inline-block;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.8);
+}
+
+.act-phase-title {
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.act-phase-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  max-width: 460px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* Act 04 CTA Button */
+.act-btn-wrap {
+  margin-top: 8px;
+  pointer-events: auto;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-text-primary);
+  color: #ffffff;
+  padding: 13px 30px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+  transition: all var(--motion-instant);
+  pointer-events: auto;
+}
+
+.hero-cta-btn:hover {
+  background: var(--color-sky-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
+}
+
+.btn-arrow {
+  font-size: 15px;
+  transition: transform var(--motion-instant);
+}
+
+.hero-cta-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Act 02: Naval CAD Blueprint (Dark Naval Blue Canvas) */
+#act-2 {
+  background: none;
+  backdrop-filter: none;
+}
+
+#act-2 .act-phase-num {
+  color: #38bdf8;
+  text-shadow: 0 0 14px rgba(56, 189, 248, 0.6);
+}
+
+#act-2 .act-phase-title {
+  color: #ffffff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+#act-2 .act-phase-desc {
+  color: #cbd5e1;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.9);
+}
+
+/* ==========================================================================
+   SECTION 2: STUNNING DESIGN (EXACT MATCH TO REFERENCE)
+   ========================================================================== */
+
+.stunning-section {
+  padding: 120px 48px 80px;
+  background: var(--color-bg-base);
+}
+
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.stunning-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.stunning-left {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.stunning-header {
+  max-width: 620px;
+}
+
+.stunning-headline {
+  font-size: clamp(30px, 3.4vw, 46px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+}
+
+.stunning-bottom-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-val {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.stat-lbl {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.stunning-cta-wrap {
+  margin-top: 6px;
+}
+
+.btn-black-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-text-primary);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--motion-instant);
+}
+
+.btn-black-pill:hover {
+  background: var(--color-sky-blue);
+  transform: translateY(-2px);
+}
+
+.stunning-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stunning-top-link-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-us-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--motion-instant);
+}
+
+.about-us-link:hover {
+  color: var(--color-sky-blue);
+}
+
+.boat-profile-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boat-art-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.boat-render-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.boat-profile-card:hover .boat-render-img {
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   SECTION 3: AERIAL YACHT WITH 3 FLOATING INTERACTIVE GLASS PILLS
+   (EXACT MATCH TO REFERENCE SIGNATURE SECTION)
+   ========================================================================== */
+
+.aerial-yacht-section {
+  padding: 40px 48px 100px;
+  background: var(--color-bg-base);
+}
+
+.aerial-card-container {
+  position: relative;
+  width: 100%;
+  min-height: 720px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(3, 43, 67, 0.22);
+  display: flex;
+  align-items: center;
+}
+
+.aerial-bg-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.aerial-yacht-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.aerial-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 30, 48, 0.45) 0%,
+    rgba(3, 30, 48, 0.1) 45%,
+    rgba(3, 30, 48, 0.5) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating Glassmorphic Pills on the Left */
+.floating-pills-column {
+  position: relative;
+  z-index: 5;
+  margin-left: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.glass-pill-widget {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-pill);
+  padding: 14px 24px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transition: transform var(--motion-instant), background var(--motion-instant);
+}
+
+.glass-pill-widget:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateX(4px);
+}
+
+.widget-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.swatches-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.swatch-btn {
+  background: none;
+  border: 2px solid transparent;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--motion-instant), border-color var(--motion-instant);
+}
+
+.swatch-btn:hover {
+  transform: scale(1.15);
+}
+
+.swatch-btn.active {
+  border-color: #ffffff;
+  transform: scale(1.18);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
+}
+
+.swatch-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 5 Helm Steering Wheel Buttons */
+.wheels-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wheel-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all var(--motion-instant);
+}
+
+.wheel-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.15);
+}
+
+.wheel-btn.active {
+  border-color: #ffffff;
+  background: var(--color-sky-blue);
+  box-shadow: 0 0 14px rgba(14, 165, 233, 0.8);
+  transform: scale(1.18);
+}
+
+.wheel-svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Right Editorial Content */
+.aerial-right-content {
+  position: relative;
+  z-index: 5;
+  margin-left: auto;
+  margin-right: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  max-width: 480px;
+}
+
+.aerial-headline {
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.btn-learn-more {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: var(--color-text-primary);
+  padding: 14px 34px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all var(--motion-instant);
+}
+
+.btn-learn-more:hover {
+  background: var(--color-bg-sky);
+  color: var(--color-sky-blue);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECTION 4: WHAT OUR CLIENTS SAY (EXACT MATCH TO REFERENCE)
+   ========================================================================== */
+
+.testimonials-section {
+  padding: 100px 48px;
+  background: var(--color-bg-base);
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.testimonials-title {
+  font-size: clamp(34px, 3.8vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.testimonials-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--motion-instant), box-shadow var(--motion-instant);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.star-row {
+  display: flex;
+  gap: 4px;
+  color: #ea580c;
+  font-size: 16px;
+}
+
+.testimonial-quote {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.client-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.client-avatar-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.client-role {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Card 2: Cole Volkov Visual Card */
+.visual-card {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.visual-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.visual-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform var(--motion-instant), background var(--motion-instant);
+}
+
+.play-button-overlay:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: #ffffff;
+}
+
+.play-icon {
+  font-size: 18px;
+  color: var(--color-text-primary);
+  margin-left: 3px;
+}
+
+.visual-caption-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+}
+
+.mini-play-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  padding-left: 2px;
+}
+
+.visual-caption-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-name-light {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.client-role-light {
+  font-size: 11px;
+  color: #cbd5e1;
+}
+
+/* Card 3: Zain Mahmood with Top Photo */
+.card-with-banner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-top-photo-wrap {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.card-top-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.card-with-banner:hover .card-top-img {
+  transform: scale(1.04);
+}
+
+.card-body-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ==========================================================================
+   SECTION 5: OCEAN CALLOUT BANNER (EXACT MATCH TO REFERENCE)
+   ========================================================================== */
+
+.banner-section {
+  padding: 20px 48px 120px;
+}
+
+.ocean-callout-banner {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 45%, #0369a1 100%);
+  border-radius: var(--radius-xl);
+  padding: 60px 64px 0 64px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 24px 56px rgba(2, 132, 199, 0.25);
+  color: #ffffff;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  padding-bottom: 60px;
+}
+
+.banner-headline {
+  font-size: clamp(34px, 3.8vw, 50px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.btn-banner-white {
+  background: #ffffff;
+  color: #0f172a;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: all var(--motion-instant);
+}
+
+.btn-banner-white:hover {
+  background: #f0f8ff;
+  color: var(--color-sky-blue);
+  transform: translateY(-2px);
+}
+
+.banner-boat-art {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner-yacht-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  transform: translateY(16px);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* ==========================================================================
+   SITE FOOTER (EXACT MATCH TO REFERENCE)
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-bg-base);
+  padding: 80px 48px 40px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.footer-top-row {
+  display: grid;
+  grid-template-columns: 1.25fr 2fr;
+  gap: 80px;
+}
+
+.footer-newsletter-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 380px;
+}
+
+.footer-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.footer-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Dark Pill Newsletter Bar (Exact match to reference) */
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  background: #000000;
+  border-radius: var(--radius-pill);
+  padding: 4px 6px 4px 18px;
+  margin-top: 10px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.newsletter-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.newsletter-input::placeholder {
+  color: #94a3b8;
+}
+
+.newsletter-submit {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  outline: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--motion-instant);
+}
+
+.newsletter-submit:hover {
+  background: var(--color-sky-blue);
+  color: #ffffff;
+}
+
+.footer-links-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.col-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+}
+
+.footer-nav-col a {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--motion-instant);
+}
+
+.footer-nav-col a:hover {
+  color: var(--color-sky-blue);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 24px;
+}
+
+.legal-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legal-links a {
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  color: var(--color-sky-blue);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .site-header {
+    padding: 16px 24px;
+  }
+  .header-inner {
+    grid-template-columns: auto 1fr;
+  }
+  .nav-left {
+    display: none;
+  }
+  .stunning-grid,
+  .testimonials-grid,
+  .ocean-callout-banner,
+  .footer-top-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .banner-boat-art {
+    display: none;
+  }
+  .hero-tagline-card {
+    top: 80px;
+    right: 24px;
+  }
+  .hero-editorial-left {
+    left: 32px;
+    width: clamp(300px, 46vw, 420px);
+    max-width: calc(100vw - 64px);
+  }
+  .aerial-card-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 32px;
+  }
+  .floating-pills-column {
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+  .aerial-right-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 12px 16px;
+  }
+  .stunning-section,
+  .aerial-yacht-section,
+  .testimonials-section,
+  .banner-section,
+  .site-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero-tagline-card {
+    display: none;
+  }
+  .hero-editorial-left {
+    left: 20px;
+    right: 20px;
+    width: auto;
+    max-width: calc(100vw - 40px);
+  }
+  .footer-links-group {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

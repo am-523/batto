@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yacht — Luxury Naval Architecture &amp; Floating Masterpieces</title>
+  <meta name="description" content="Yates isn't just a yacht — it's your private escape. Your floating masterpiece with cutting-edge design. Minimalist clean white & sky blue naval engineering.">
+  
+  <!-- Preload First Canvas Frame for Instantaneous Rendering -->
+  <link rel="preload" as="image" href="/frames/frame_001.webp">
+
+  <!-- Fonts: Modern Sans & Editorial Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY SKIP LINK -->
+  <a href="#hero-stage" class="skip-to-content">Skip to content</a>
+
+  <!-- FLOATING GLASS NAVBAR (MATCHING REFERENCE EXACTLY) -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      
+      <!-- LEFT NAV (With Black Pill Active on The Brand) -->
+      <nav class="nav-left" aria-label="Brand Navigation">
+        <a href="#hero-stage" class="nav-link pill-active">The Brand</a>
+        <a href="#stunning-design" class="nav-link">Our Yachts</a>
+        <a href="#testimonials" class="nav-link">News</a>
+      </nav>
+
+      <!-- CENTER LOGOTYPE: "Yacht" -->
+      <a href="#" class="brand-logo" aria-label="Yacht Home">
+        <span class="logo-title">Yacht</span>
+      </a>
+
+      <!-- RIGHT NAV: "Our Dealers" & "Configuration" -->
+      <div class="nav-right">
+        <a href="#customizer" class="nav-link">Our Dealers</a>
+        <a href="#customizer" class="nav-link">Configuration</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN VIEWPORT -->
+  <main id="main-content">
+
+    <!-- HERO 3D SCROLL STAGE (380VH SCROLL TRACK & 240-FRAME SCRUBBING) -->
+    <section id="hero-stage" class="hero-stage" aria-label="Interactive 3D Yacht Scrollytelling Experience">
+      <div class="hero-sticky-frame">
+        
+        <!-- GIANT BACKGROUND TYPOGRAPHY: "Yacht" (MATCHING REFERENCE) -->
+        <div class="giant-bg-text" aria-hidden="true">
+          <span class="bg-char">Y</span>
+          <span class="bg-char">a</span>
+          <span class="bg-char">c</span>
+          <span class="bg-char">h</span>
+          <span class="bg-char">t</span>
+        </div>
+
+        <!-- FULL BLEED 60FPS CANVAS (SCRUBS 240 WEBP FRAMES ON SCROLL) -->
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+
+        <!-- FULL LEFT SIDE AMBIENT SHADOW (SEAMLESS LEFT EDGE VIGNETTE) -->
+        <div id="hero-left-scrim" class="hero-left-scrim" aria-hidden="true"></div>
+
+        <!-- TOP RIGHT EDITORIAL TAGLINE (MATCHING REFERENCE EXACT COPY) -->
+        <div class="hero-tagline-card">
+          <p class="tagline-text">
+            Yates Isn't Just A Yacht — It's Your Private Escape. Your Floating Masterpiece. With Cutting-Edge Design.
+          </p>
+        </div>
+
+        <!-- MIDDLE-LEFT EDITORIAL HEADINGS & SUBHEADINGS -->
+        <div class="hero-editorial-left">
+          
+          <!-- ACT 01: SKETCH (0% - 25%) -->
+          <div id="act-1" class="act-phase active">
+            <span class="act-phase-num mono">01 / CONCEPT GENESIS</span>
+            <h1 class="act-phase-title">Conceived on paper.<br>Born for the ocean.</h1>
+            <p class="act-phase-desc">Freehand strokes sculpting an ultra-low drag profile with timeless naval proportions.</p>
+          </div>
+
+          <!-- ACT 02: BLUEPRINT (26% - 50%) -->
+          <div id="act-2" class="act-phase">
+            <span class="act-phase-num mono">02 / CAD BLUEPRINT</span>
+            <h2 class="act-phase-title">Hydrodynamic precision.<br>BATTO LXIRT Engineering.</h2>
+            <p class="act-phase-desc">Hydrostatic balance and displacement calculating whisper-quiet transatlantic efficiency.</p>
+          </div>
+
+          <!-- ACT 03: EXPLODED VIEW (51% - 75%) -->
+          <div id="act-3" class="act-phase">
+            <span class="act-phase-num mono">03 / ARCHITECTURE</span>
+            <h2 class="act-phase-title">Five distinct levels of<br>uncompromised luxury.</h2>
+            <p class="act-phase-desc">Decoupled tiers spanning from the panoramic Sky Lounge down to the hydraulic Beach Club.</p>
+          </div>
+
+          <!-- ACT 04: 360 ROTATION (76% - 100%) -->
+          <div id="act-4" class="act-phase">
+            <span class="act-phase-num mono">04 / THE VESSEL</span>
+            <h2 class="act-phase-title">Experience the pinnacle<br>of ocean luxury.</h2>
+            <p class="act-phase-desc">Seamless harmony between vessel and water, commanding the world's most exclusive harbors.</p>
+            <div class="act-btn-wrap">
+              <a href="#customizer" class="hero-cta-btn">
+                <span>Configure Your Yacht</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: STUNNING DESIGN (EXACT MATCH TO REFERENCE) -->
+    <section id="stunning-design" class="stunning-section">
+      <div class="section-container">
+        
+        <div class="stunning-grid">
+          
+          <!-- LEFT: TYPOGRAPHY, STATS & BLACK PILL BUTTON -->
+          <div class="stunning-left">
+            
+            <div class="stunning-header">
+              <h2 class="stunning-headline">
+                Stunning design for those who crave the open sea, quiet luxury and effortless adventure.
+              </h2>
+            </div>
+
+            <div class="stunning-bottom-row">
+              <div class="stat-block">
+                <span class="stat-val">2K+</span>
+                <span class="stat-lbl">Happy Customers</span>
+              </div>
+              <div class="stunning-cta-wrap">
+                <a href="#customizer" class="btn-black-pill">Join Them</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: ELECTRIC SKY-BLUE BOAT WITH ABOUT US LINK -->
+          <div class="stunning-right">
+            
+            <div class="stunning-top-link-row">
+              <a href="#heritage" class="about-us-link">About Us</a>
+            </div>
+
+            <div class="boat-profile-card">
+              <div class="boat-art-wrapper">
+                <img src="/boat-profile.jpg" alt="Electric Sky Blue Motorboat with Water Reflections" class="boat-render-img">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: AERIAL YACHT WITH 3 FLOATING INTERACTIVE GLASS PILLS (EXACT MATCH TO REFERENCE) -->
+    <section id="customizer" class="aerial-yacht-section">
+      <div class="section-container">
+        
+        <div class="aerial-card-container">
+          
+          <!-- AERIAL YACHT BACKGROUND IMAGE -->
+          <div class="aerial-bg-wrap">
+            <img src="/aerial-yacht.jpg" alt="Aerial Drone View of Luxury Yacht in Turquoise Ocean" class="aerial-yacht-img">
+            <div class="aerial-overlay-gradient"></div>
+          </div>
+
+          <!-- FLOATING WIDGETS ON THE LEFT (GLASSMORPHISM) -->
+          <div class="floating-pills-column">
+            
+            <!-- 1. INTERIOR THEMES PILL -->
+            <div class="glass-pill-widget" id="widget-interior">
+              <span class="widget-label">Interior Themes</span>
+              <div class="swatches-row">
+                <button class="swatch-btn" data-theme="champagne" title="Champagne Sand" aria-label="Champagne Sand">
+                  <span class="swatch-dot" style="background: #e2d2be;"></span>
+                </button>
+                <button class="swatch-btn active" data-theme="turquoise" title="Turquoise Ocean" aria-label="Turquoise Ocean">
+                  <span class="swatch-dot" style="background: #0ea5e9;"></span>
+                </button>
+                <button class="swatch-btn" data-theme="terracotta" title="Cognac Leather" aria-label="Cognac Leather">
+                  <span class="swatch-dot" style="background: #be8a74;"></span>
+                </button>
+                <button class="swatch-btn" data-theme="charcoal" title="Obsidian Charcoal" aria-label="Obsidian Charcoal">
+                  <span class="swatch-dot" style="background: #334155;"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. WHEELS PILL (5 HELM WHEEL ICONS) -->
+            <div class="glass-pill-widget" id="widget-wheels">
+              <span class="widget-label">Wheels</span>
+              <div class="wheels-row">
+                <button class="wheel-btn" data-wheel="1" title="Classic Bronze Helm" aria-label="Classic Bronze Helm">
+                  <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="2.5"/>
+                    <line x1="12" y1="2" x2="12" y2="5"/>
+                    <line x1="12" y1="19" x2="12" y2="22"/>
+                    <line x1="2" y1="12" x2="5" y2="12"/>
+                    <line x1="19" y1="12" x2="22" y2="12"/>
+                  </svg>
+                </button>
+                <button class="wheel-btn" data-wheel="2" title="Polished Marine Steel" aria-label="Polished Marine Steel">
+                  <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="2.5"/>
+                    <line x1="4.5" y1="4.5" x2="7" y2="7"/>
+                    <line x1="17" y1="17" x2="19.5" y2="19.5"/>
+                    <line x1="4.5" y1="19.5" x2="7" y2="17"/>
+                    <line x1="17" y1="7" x2="19.5" y2="4.5"/>
+                  </svg>
+                </button>
+                <button class="wheel-btn active" data-wheel="3" title="Aerospace Carbon 3-Spoke" aria-label="Aerospace Carbon 3-Spoke">
+                  <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="3"/>
+                    <line x1="12" y1="4" x2="12" y2="9"/>
+                    <line x1="6.5" y1="16" x2="10" y2="13.5"/>
+                    <line x1="17.5" y1="16" x2="14" y2="13.5"/>
+                  </svg>
+                </button>
+                <button class="wheel-btn" data-wheel="4" title="Mahogany Craft Helm" aria-label="Mahogany Craft Helm">
+                  <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="2.5"/>
+                    <line x1="12" y1="2" x2="12" y2="5"/>
+                    <line x1="12" y1="19" x2="12" y2="22"/>
+                    <line x1="2" y1="12" x2="5" y2="12"/>
+                    <line x1="19" y1="12" x2="22" y2="12"/>
+                  </svg>
+                </button>
+                <button class="wheel-btn" data-wheel="5" title="Minimal White Luxe Helm" aria-label="Minimal White Luxe Helm">
+                  <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="2.5"/>
+                    <line x1="5" y1="5" x2="8" y2="8"/>
+                    <line x1="16" y1="16" x2="19" y2="19"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- 3. EXTERIOR COLORS PILL (5 COLOR SWATCHES) -->
+            <div class="glass-pill-widget" id="widget-exterior">
+              <span class="widget-label">Exterior Colors</span>
+              <div class="swatches-row">
+                <button class="swatch-btn" data-color="#e2d8ce" title="Warm Oyster" aria-label="Warm Oyster">
+                  <span class="swatch-dot" style="background: #e2d8ce;"></span>
+                </button>
+                <button class="swatch-btn active" data-color="#ffffff" title="Pure Alabaster" aria-label="Pure Alabaster">
+                  <span class="swatch-dot" style="background: #ffffff; border: 1px solid rgba(255,255,255,0.8);"></span>
+                </button>
+                <button class="swatch-btn" data-color="#38bdf8" title="Sky Azure" aria-label="Sky Azure">
+                  <span class="swatch-dot" style="background: #38bdf8;"></span>
+                </button>
+                <button class="swatch-btn" data-color="#64748b" title="Riviera Slate" aria-label="Riviera Slate">
+                  <span class="swatch-dot" style="background: #64748b;"></span>
+                </button>
+                <button class="swatch-btn" data-color="#0f172a" title="Obsidian Navy" aria-label="Obsidian Navy">
+                  <span class="swatch-dot" style="background: #0f172a;"></span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDE EDITORIAL CONTENT (MATCHING REFERENCE) -->
+          <div class="aerial-right-content">
+            <h2 class="aerial-headline">
+              Experience<br>
+              the pinnacle<br>
+              of ocean<br>
+              luxury.
+            </h2>
+            <div class="aerial-cta-row">
+              <a href="#stunning-design" class="btn-learn-more">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHAT OUR CLIENTS SAY (EXACT MATCH TO REFERENCE) -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="section-container">
+        
+        <div class="testimonials-header">
+          <h2 class="testimonials-title">What our <em>clients say</em></h2>
+        </div>
+
+        <div class="testimonials-grid">
+          
+          <!-- CARD 1: SAM WHITAKER -->
+          <div class="testimonial-card">
+            <div class="star-row" aria-label="5 out of 5 stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="testimonial-quote">
+              The Absolute changed our lifestyle. It's smooth, ultra-lux, and handles like a dream. Best part? It feels like home on water.
+            </p>
+            <div class="client-profile">
+              <img src="/avatar-sam.jpg" alt="Sam Whitaker" class="client-avatar-img">
+              <div class="client-info">
+                <span class="client-name">Sam Whitaker</span>
+                <span class="client-role">Tech Entrepreneur, Miami</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: COLE VOLKOV (FULL PHOTO WITH PLAY BUTTON OVERLAY) -->
+          <div class="testimonial-card visual-card">
+            <div class="visual-img-container">
+              <img src="/client-cole.jpg" alt="Cole Volkov enjoying luxury yacht deck in Monaco" class="visual-bg-img">
+              <div class="play-button-overlay" role="button" aria-label="Play video interview of Cole Volkov">
+                <div class="play-icon">▶</div>
+              </div>
+              <div class="visual-caption-overlay">
+                <div class="mini-play-icon">▶</div>
+                <div class="visual-caption-text">
+                  <span class="client-name-light">Cole Volkov</span>
+                  <span class="client-role-light">Interior Designer, Monaco</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: ZAIN MAHMOOD (PHOTO + STARS + QUOTE) -->
+          <div class="testimonial-card card-with-banner">
+            <div class="card-top-photo-wrap">
+              <img src="/client-zain.jpg" alt="Zain Mahmood on yacht railing" class="card-top-img">
+            </div>
+            <div class="card-body-content">
+              <div class="star-row" aria-label="5 out of 5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+              <p class="testimonial-quote">
+                “The Absolute changed our lifestyle. It's smooth, ultra-lux, and handles like a dream. Best part? It feels like home on water.”
+              </p>
+              <div class="client-profile">
+                <img src="/client-zain.jpg" alt="Zain Mahmood" class="client-avatar-img">
+                <div class="client-info">
+                  <span class="client-name">Zain Mahmood</span>
+                  <span class="client-role">Finance Executive, Dubai</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: READY TO BRING YOUR VISION TO LIFE? (MATCHING REFERENCE BANNER) -->
+    <section class="banner-section">
+      <div class="section-container">
+        
+        <div class="ocean-callout-banner">
+          <div class="banner-content">
+            <h2 class="banner-headline">Ready to Bring Your<br>Vision to Life?</h2>
+            <a href="#customizer" class="btn-banner-white">Get Started</a>
+          </div>
+          <div class="banner-boat-art">
+            <img src="/banner-yacht.jpg" alt="Luxury White Yacht Bow Cruising On Deep Blue Sea" class="banner-yacht-img">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER (EXACT MATCH TO REFERENCE) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      
+      <div class="footer-top-row">
+        
+        <!-- LEFT NEWSLETTER: "Let's Talk Yachts." -->
+        <div class="footer-newsletter-col">
+          <h3 class="footer-title">Let's Talk Yachts.</h3>
+          <p class="footer-desc">
+            Join our list to receive new model releases, yacht show invites, and lifestyle insights.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Yacht updates.');">
+            <input type="email" placeholder="Enter your email" class="newsletter-input" required aria-label="Enter your email">
+            <button type="submit" class="newsletter-submit">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- RIGHT 3 LINK COLUMNS: Company, Explore, Resources -->
+        <div class="footer-links-group">
+          
+          <div class="footer-nav-col">
+            <h4 class="col-heading">Company</h4>
+            <a href="#hero-stage">Home</a>
+            <a href="#stunning-design">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Policies</a>
+            <a href="#">Blog</a>
+          </div>
+
+          <div class="footer-nav-col">
+            <h4 class="col-heading">Explore</h4>
+            <a href="#customizer">Models Catalog</a>
+            <a href="#stunning-design">Cabin Yacht</a>
+            <a href="#hero-stage">Yotes</a>
+            <a href="#">Eco-Yachts</a>
+            <a href="#customizer">Customization</a>
+          </div>
+
+          <div class="footer-nav-col">
+            <h4 class="col-heading">Resources</h4>
+            <a href="#">Style Guide</a>
+            <a href="#">Instructions</a>
+            <a href="#">Licensing</a>
+            <a href="#">Changelog</a>
+            <a href="#">Warranty Info</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOTTOM BAR (EXACT MATCH TO REFERENCE) -->
+      <div class="footer-bottom-bar">
+        <span class="copy-text">©Yates LXIR. All rights reserved.</span>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms of service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

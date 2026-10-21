@@ -2,6 +2,8 @@
 
 An ultra-luxurious yacht showcase web experience featuring frame-by-frame canvas scroll scrubbing, Lenis smooth scrolling, editorial typography, and floating glassmorphic interfaces.
 
+![Yates Luxury Yacht Preview](./screenshot.png)
+
 ## ✨ Features
 
 - **Cinematic Scroll Animation**: High-definition yacht navigation sequence rendered frame-by-frame on canvas tied directly to scroll depth.
